@@ -8,6 +8,7 @@ class Card :
         self.suit = suit
         self.rank = rank
         self.position = 'down'
+        self.value = 0
 
     def reveal(self):
         print(f"you have a {self.rank} of {self.suit}")
