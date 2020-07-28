@@ -2,37 +2,39 @@ from deck import Deck
 from player import Player
 from player import Dealer
 from player import Hand
+from card import Card
 
-p1 = Player('i-lo')
-dealer = Dealer('Mr.jack')
-deck = Deck()
-deck.shuffle()
-
-dealer.deal(p1,deck)
-p1.hand.display()
-print()
-dealer.deal(dealer,deck)
-dealer.hand.display()
+class BlackJack:
+    def __init__(self):
+        player1 = Player("")
+        dealer = Dealer("mr.dealer")
+        deck = Deck()
 
 
+    def run(self):
+        setup()
 
+        bet()
+        deal()
+        playerAction()
+        dealerAction()
+        endGame()
 
+    def drawBoard(self):
+        Print("")
+        # draww all cards 
+        #2 draws for flip
 
-#checking for ace value/in hand
-#drewAce = False
-#        for i in range(cNum):
-#            topCard = deck.pop()
-#            draw.append(topCard)
-#            if topcard.rank == 'A':
-#                drewAce = True
+    def setup(self):
+        Print(f"{self.dealer.name}: Hello welcome to blackJack!\nWhat is your name?")
+        self.player1.name = input().title()
+        self.deck.shuffle()
 
-#        if not(player.hand.checkAce()) and drewAce:
-#            print('you drew')
-#            for card in player.hand.cards:
-#                card.reveal()
-#            for card in draw:
-#                card.reveal()
-#            print("High or low?")
-#            aceValue = input()
-#        else:
-#            aceValue = False
+    def bet(self):
+        Print("")
+
+card1 = Card('dimonds','2')
+card1.reveal()
+card1.position = 'set'
+for line in card1.card2string():
+    print(line)

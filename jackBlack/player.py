@@ -31,6 +31,14 @@ class Player :
             else:
                 print('not vaid')
 
+    def status(self):
+        if self.hand.value == 21:
+            return 'blackjack'
+        elif self.hand.value > 21:
+            return 'bust'
+        else:
+            return 'good'
+
 #dealer is child of parent player                 
 class Dealer(Player):
     def __init__(self, name):
@@ -60,7 +68,8 @@ class Hand:
         self.cardNum = len(self.cards)
         self.value = 0
         
-
+    #maybe have it return 'value' 
+    #jackBlack line 22
     def updateValue(self, ace_value = 'low'):
         #create a dictionary for values
         values={
@@ -91,8 +100,7 @@ class Hand:
         for card in self.cards:
             if card.rank == 'A':
                 return True
-            else:
-                return False
+        return False
 
     def display(self):
         for card in self.cards :
